@@ -93,6 +93,7 @@ class Retailcrm
   def orders_create(order, site = nil)
     url = "#{@url}orders/create"
     @params[:order] = order.to_json
+    @params[:roistat] = order.roistat_visit
     @params[:site] = site
     make_request(url, 'post')
   end
